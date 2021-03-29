@@ -1,4 +1,4 @@
-import 'package:calculator/pages/calculator_page.dart';
+import 'package:calculator_flutter_desafio/pages/calculator_page.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 

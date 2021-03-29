@@ -1,4 +1,4 @@
-import 'package:calculator/controllers/calculator_controller.dart';
+import 'package:calculator_flutter_desafio/controllers/calculator_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:share/share.dart';
 
@@ -64,8 +64,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
           textAlign: TextAlign.end,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 55,
-            fontFamily: 'Calculator',
+            fontSize: 52,
+            // fontFamily: 'Calculator',
           ),
         ),
       ),
@@ -77,13 +77,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
       child: Container(
         alignment: Alignment.bottomRight,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        color: Colors.white,
         child: Text(
           text ?? '0',
           textAlign: TextAlign.end,
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,
-            fontFamily: 'Calculator',
+            color: Colors.black,
+            fontSize: 20,
+            // fontFamily: 'Calculator',
           ),
         ),
       ),
@@ -172,23 +173,23 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Widget _buildButton(
       {String label, int flex = 1, Color color = Colors.white}) {
     return Expanded(
-      flex: flex,
-      child: RaisedButton(
+        flex: flex,
+        child: RaisedButton(
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 24,
               color: color,
             ),
           ),
           color: Colors.black,
           onPressed: () {
             setState(() {
-              _calculatorLogic(label);
               _showOperation(label);
+              _calculatorLogic(label);
             });
-          }),
-    );
+          },
+        ));
   }
 
   _showOperation(String label) {
@@ -202,7 +203,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
         _showingOperation = '';
       }
     } else if (label == '=') {
-      _showingOperation += label + _controller.result;
+      _showingOperation += label + _controller.result + "\n";
     } else {
       _showingOperation += label;
     }
