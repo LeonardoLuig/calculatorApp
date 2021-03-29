@@ -51,7 +51,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   void share() {
     Share.share(
-        'See this and another projects created by me in: https://github.com/LeonardoLuig');
+        'See this and another projects created by me in: https://github.com/LeonardoLuig/calculatorApp');
   }
 
   Widget _buildDisplay({String text}) {
